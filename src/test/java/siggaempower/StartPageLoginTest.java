@@ -20,7 +20,42 @@ public class StartPageLoginTest extends BaseTest {
         startPage = new StartPage();
     }
 
-    @Test(testName = "Test error message when use invalid IDs credentials - correct message")
+    @Test(testName = "Test error message when use invalid Server")
+    public void testWithInvalidServerOption(){
+        startPage.clickStartServerBtn();
+        startPage.getSelectCustomServer();
+        startPage.writeWrongServerStg("ABC");
+        startPage.clickContinueBtn();
+
+        String errorText = startPage.getScreenErrorMessageAfterIsertWrongSerer();
+
+        Assert.assertEquals(errorText, startPage.getTextWrongServerErrorMessage());
+        //Assert.assertEquals(errorText, "wrong text error");
+
+        startPage.clickWorningBtnOk();
+
+    }
+
+    @Test(testName = "Test error message when use invalid Email ID credential")
+    public void testWithInvalidEmailCredential(){
+        startPage.clickStartServerBtn();
+        startPage.getSelectCustomServer();
+        startPage.writeServerStg();
+        startPage.clickContinueBtn();
+        startPage.writeEmailtoLogin("no_candidato@google.com");
+        startPage.clickContinueBtn();
+
+        String errorText = startPage.getScreenErrorMessageAfterIsertWrongSerer();
+
+        Assert.assertEquals(errorText, startPage.getTextMessageErrorToInvalidCrendential());
+        //Assert.assertEquals(errorText, "wrong text error");
+
+        startPage.clickWorningBtnOk();
+
+    }
+
+
+    @Test(testName = "Test error message when use invalid password credentials - correct message")
     public void testWithInvalidCredentialValidTextError(){
         startPage.clickStartServerBtn();
         startPage.getSelectCustomServer();
@@ -34,26 +69,10 @@ public class StartPageLoginTest extends BaseTest {
         String errorText = startPage.getErrorMessage();
 
         Assert.assertEquals(errorText, startPage.getTextMessageErrorToInvalidCrendential());
+        //Assert.assertEquals(errorText, "wrong text error");
 
         startPage.clickWorningBtnOk();
 
     }
 
-    //@Test(testName = "Test error message when use invalid IDs credentials - incorrect message")
-    public void testWithInvalidCredentialsInValidTextError(){
-        startPage.clickStartServerBtn();
-        startPage.getSelectCustomServer();
-        startPage.writeServerStg();
-        startPage.clickContinueBtn();
-        startPage.writeEmailtoLogin();
-        startPage.clickContinueBtn();
-        startPage.writeIvalidPasswrod();
-        startPage.clickSingInBtn();
-
-        String errorText = startPage.getErrorMessage();
-
-        Assert.assertEquals(errorText, "Wrong text error!");
-
-        startPage.clickWorningBtnOk();
-    }
 }
