@@ -1,0 +1,9 @@
+click&//android.widget.Button[@text='Select Server']
+click&//android.widget.TextView[@text='Custom']
+write&//android.widget.EditText&stg
+click&//android.widget.Button[@text='Continue']
+write&//android.widget.EditText[@text='example@company.com']&candidato@processoseletivo.com
+click&//android.widget.Button[@text='Continue']
+write&//android.view.ViewGroup[position()=3]/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText&12345678
+click&//android.widget.Button[@text='Sign In']
+getText&//android.widget.TextView[@resource-id='android:id/message']

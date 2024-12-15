@@ -1,0 +1,22 @@
+
+
+
+
+field:	input server	message
+        empty	        "Enter server to continue"
+    x	wrong value	    "It wasn't possible to retrieve certificate from the server. Try again later"
+        correct value	show email field input
+
+field:	input email
+        empty	        "Enter an email to continue"
+    x	wrong value	    "Invalid user!"
+        correct value	show password field input
+
+
+field:	[input email]	[input password]	[message]
+        empty	        empty	            "User or Password not entered!"
+        empty	        wrong value	        "User or Password not entered!"
+        wrong value	    empty	            "User or Password not entered!"
+        correct value	empty	            "User or Password not entered!"
+    x	correct value	wrong value	        "Invalid user!"
+        wrong value	    wrong value	        "Invalid user!"

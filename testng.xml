@@ -5,7 +5,8 @@
         <parameter name="deviceUdid" value="2855c305153f7ece"></parameter>
         <parameter name="portNumber" value="8888"></parameter>
         <classes>
-            <class name="siggaempower.StartPageLoginTest"> </class>
+            <class name="templates.TestTemplateFile"> </class>
+            <!-- class name="siggaempower.StartPageLoginTest"> </class -->
         </classes>
     </test>
 </suite>
