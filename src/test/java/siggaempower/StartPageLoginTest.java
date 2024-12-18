@@ -18,6 +18,7 @@ public class StartPageLoginTest extends BaseTest {
     public void setup(String deviceUdid, String portNumber) throws MalformedURLException, InterruptedException {
         super.setup(deviceUdid, portNumber);
         startPage = new StartPage();
+
     }
 
     @Test(testName = "Test error message when use invalid Server")

@@ -5,6 +5,7 @@ import config.PropertyUtil;
 import org.openqa.selenium.By;
 
 public class StartPage extends BasePage {
+
     private final String MESSAGE_ERRO_INVALID_SERVER = "It wasn't possible to retrieve the certificate from the server. Try again later.";
     private final String MESSAGE_ERROR_LOGIN_INVALID_CREDENTIAL  = "Invalid user!";
 
@@ -13,6 +14,9 @@ public class StartPage extends BasePage {
     private By serverTextInput = By.xpath("//android.widget.EditText"); //stg
     private By continueBtn = By.xpath("//android.widget.Button[@text='Continue']"); // for input server and input email
     private By emailTextInput = By.xpath("//android.widget.EditText[@text='example@company.com']"); //candidato@processoseletivo.com
+
+    //option
+    //android.widget.TextView[@text="Password"]//parent::android.view.ViewGroup//android.view.ViewGroup//android.widget.EditT
     private By passwordInput = By.xpath("//android.view.ViewGroup[position()=3]/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText");
     private By singInBtn = By.xpath("//android.widget.Button[@text='Sign In']");
     private By errorMessage = By.xpath("//android.widget.TextView[@resource-id='android:id/message']"); //Invalid user!
